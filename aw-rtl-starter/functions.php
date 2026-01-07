@@ -41,7 +41,7 @@ function aw_widgets_init() {
     register_sidebar( array(
         'name'          => __( 'Footer Widget', 'aw-rtl-starter' ),
         'id'            => 'footer-1',
-        'before_widget' => '<div class="footer-widget %2$s'>',
+        'before_widget' => '<div class="footer-widget %2$s">',
         'after_widget'  => '</div>',
         'before_title'  => '<h4>',
         'after_title'   => '</h4>',
