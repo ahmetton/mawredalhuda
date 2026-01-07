@@ -1,32 +1,19 @@
 <?php
 /**
- * Footer template
+ * Footer template - uses template-part for footer widgets
  */
 ?>
-</main><!-- #site-content -->
+  </main><!-- #site-content -->
 
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-widgets">
-      <?php if ( is_active_sidebar( 'footer-1' ) ) { dynamic_sidebar( 'footer-1' ); } else { ?>
-      <div class="footer-widget">
-        <h4><?php _e( 'نبذة', 'aw-rtl-starter' ); ?></h4>
-        <p><?php _e( 'أضف ويدجيت هنا من المظهر → الأدوات', 'aw-rtl-starter' ); ?></p>
+  <footer class="site-footer">
+    <div class="container">
+      <?php get_template_part( 'template-parts/footer/footer', 'widgets' ); ?>
+      <div class="align-center" style="margin-top:1rem;">
+        <small>&copy; <?php echo date_i18n( get_option( 'date_format' ) ); ?> <?php bloginfo( 'name' ); ?></small>
       </div>
-      <?php } ?>
     </div>
-    <div class="site-info">
-      <p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?> — <?php _e( 'جميع الحقوق محفوظة', 'aw-rtl-starter' ); ?></p>
-      <?php
-      wp_nav_menu( array(
-        'theme_location' => 'footer',
-        'container' => false,
-        'menu_class' => 'footer-menu',
-      ) );
-      ?>
-    </div>
-  </div>
-</footer>
+  </footer>
+
 <?php wp_footer(); ?>
 </body>
 </html>

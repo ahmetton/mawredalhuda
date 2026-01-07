@@ -1,0 +1,62 @@
+/*
+Theme: aw-rtl-starter - improved styles
+*/
+:root{
+  --color-primary: #0d6efd;
+  --color-accent: #6610f2;
+  --color-bg: #ffffff;
+  --color-text: #222;
+  --container-width: 1100px;
+}
+
+/* Basic reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color:var(--color-bg);
+  color:var(--color-text);
+  line-height:1.6;
+  direction: rtl; /* RTL-ready */
+}
+
+a{color:var(--color-primary);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.container{max-width:var(--container-width);margin:0 auto;padding:1rem}
+
+/* Header */
+.site-header{background:linear-gradient(180deg, rgba(0,0,0,0.02), transparent);border-bottom:1px solid rgba(0,0,0,0.05)}
+.site-branding{display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.site-title{font-size:1.25rem;font-weight:700}
+.site-logo img{max-height:48px}
+
+.main-navigation{display:flex;gap:1rem}
+.main-navigation a{padding:.5rem .75rem;border-radius:4px}
+.main-navigation a:hover{background:rgba(0,0,0,0.03)}
+
+.menu-toggle{display:none}
+
+/* Portfolio grid */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:1.25rem 0}
+.portfolio-item{background:#fff;border:1px solid rgba(0,0,0,0.04);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.portfolio-thumb{width:100%;height:160px;object-fit:cover}
+.portfolio-content{padding:0.8rem;flex:1}
+.portfolio-title{font-size:1.05rem;margin-bottom:0.5rem}
+
+/* Footer */
+.site-footer{border-top:1px solid rgba(0,0,0,0.06);padding:1.25rem 0;background:linear-gradient(0deg, rgba(0,0,0,0.02), transparent)}
+.footer-widgets{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+
+/* Responsive */
+@media (max-width:768px){
+  .menu-toggle{display:block;background:transparent;border:0;font-size:1rem;padding:.5rem}
+  .main-navigation{display:none;flex-direction:column;margin-top:.5rem}
+  .main-navigation.open{display:flex}
+}
+
+/* Utility */
+.align-center{text-align:center}
+
+/* Accessible focus state */
+:focus{outline:2px dashed var(--color-accent);outline-offset:3px}
